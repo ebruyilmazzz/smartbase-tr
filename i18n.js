@@ -105,15 +105,11 @@
 
     // Update dynamic words for hero section
     function updateDynamicWords() {
-        const dynamicWords = translations[currentLang]?.hero?.dynamic_words || ['ERP', 'CRM', 'Özel Otomasyon', 'Dijital Dönüşüm'];
-        window.dynamicWords = dynamicWords;
-        
-        // Update the dynamic text element if it exists
-        const dynamicTextElement = document.getElementById('dynamic-text');
-        if (dynamicTextElement && window.dynamicIndex !== undefined) {
-            window.dynamicIndex = 0;
-            dynamicTextElement.textContent = dynamicWords[0];
-        }
+        // Dispatch custom event to notify listeners that language has changed
+        const event = new CustomEvent('languageChanged', {
+            detail: { language: currentLang }
+        });
+        document.dispatchEvent(event);
     }
 
     // Switch language
