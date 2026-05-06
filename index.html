@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="tr">
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/png" href="image/SmartBaseLogo.png">
     <title>SmartBase</title>
+    <link rel="alternate" hreflang="tr" href="https://yourdomain.com/">
+    <link rel="alternate" hreflang="en" href="https://yourdomain.com/en">
+    <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -49,6 +51,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="i18n.js"></script>
     <style>
         * {
             font-family: 'Inter', sans-serif;
@@ -185,12 +188,15 @@
                     <img src="image/SmartBase Logo+Yazı.png" alt="SmartBase Logo" class="h-11">
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors">Hakkımızda</a>
-                    <a href="#services" class="text-gray-600 hover:text-teal-500 transition-colors">Hizmetler</a>
-                    <a href="#team" class="text-gray-600 hover:text-teal-500 transition-colors">Ekip</a>
-                    <a href="#process" class="text-gray-600 hover:text-teal-500 transition-colors">Süreç</a>
-                    <a href="#cases" class="text-gray-600 hover:text-teal-500 transition-colors">Başarı Hikayeleri</a>
-                    <a href="#contact" class="bg-teal-500 text-white px-5 py-2.5 rounded-lg hover:bg-navy-950 transition-colors">İletişim</a>
+                    <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.about">Hakkımızda</a>
+                    <a href="#services" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
+                    <a href="#team" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.team">Ekip</a>
+                    <a href="#process" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.process">Süreç</a>
+                    <a href="#cases" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.cases">Başarı Hikayeleri</a>
+                    <a href="#contact" class="bg-teal-500 text-white px-5 py-2.5 rounded-lg hover:bg-navy-950 transition-colors" data-i18n="nav.contact">İletişim</a>
+                    <button id="lang-switch" class="flex items-center space-x-2 px-4 py-2 border border-navy-200 rounded-lg hover:border-teal-500 transition-colors">
+                        <span id="lang-text" class="text-gray-600 font-medium">TR</span>
+                    </button>
                 </div>
                 <button id="mobile-menu-btn" class="md:hidden text-gray-600">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -200,12 +206,15 @@
             </div>
             <!-- Mobile Menu -->
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4">
-                <a href="#about" class="block text-gray-600 hover:text-teal-500">Hakkımızda</a>
-                <a href="#services" class="block text-gray-600 hover:text-teal-500">Hizmetler</a>
-                <a href="#team" class="block text-gray-600 hover:text-teal-500">Ekip</a>
-                <a href="#process" class="block text-gray-600 hover:text-teal-500">Süreç</a>
-                <a href="#cases" class="block text-gray-600 hover:text-teal-500">Başarı Hikayeleri</a>
-                <a href="#contact" class="block text-gray-600 hover:text-teal-500">İletişim</a>
+                <a href="#about" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.about">Hakkımızda</a>
+                <a href="#services" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.services">Hizmetler</a>
+                <a href="#team" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.team">Ekip</a>
+                <a href="#process" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.process">Süreç</a>
+                <a href="#cases" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.cases">Başarı Hikayeleri</a>
+                <a href="#contact" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.contact">İletişim</a>
+                <button id="mobile-lang-switch" class="flex items-center space-x-2 px-4 py-2 border border-navy-200 rounded-lg hover:border-teal-500 transition-colors w-full justify-center">
+                    <span id="mobile-lang-text" class="text-gray-600 font-medium">TR</span>
+                </button>
             </div>
         </div>
     </nav>
@@ -238,13 +247,13 @@
             </div>
             
             <!-- Subtitle -->
-            <p class="mt-10 text-lg md:text-xl text-gray-300/90 leading-relaxed max-w-2xl mx-auto tracking-wide">
+            <p class="mt-10 text-lg md:text-xl text-gray-300/90 leading-relaxed max-w-2xl mx-auto tracking-wide" data-i18n="hero.subtitle">
                 İşletmenizin süreçlerini hızlandıran, maliyetleri azaltan ve büyümenizi destekleyen ERP, CRM ve otomasyon çözümleri sunuyoruz.
             </p>
             
             <!-- CTA -->
             <div class="mt-10">
-                <a href="#contact" class="inline-block cta-primary px-10 py-4 rounded-lg text-base font-medium shadow-md">
+                <a href="#contact" class="inline-block cta-primary px-10 py-4 rounded-lg text-base font-medium shadow-md" data-i18n="hero.cta">
                     Analiz talep et
                 </a>
             </div>
@@ -261,8 +270,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2">ERP Çözümleri</h3>
-                    <p class="text-gray-600 text-sm">Üretimden finansa kadar tüm süreçlerinizi tek sistemde yönetin</p>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="services_icons.erp_title">ERP Çözümleri</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="services_icons.erp_desc">Üretimden finansa kadar tüm süreçlerinizi tek sistemde yönetin</p>
                 </div>
                 <div class="p-6 bg-white border border-navy-200 rounded-xl shadow-sm card-hover">
                     <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
@@ -270,8 +279,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2">CRM Çözümleri</h3>
-                    <p class="text-gray-600 text-sm">Müşteri ilişkilerinizi merkezi hale getirin, satış süreçlerinizi yönetin</p>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="services_icons.crm_title">CRM Çözümleri</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="services_icons.crm_desc">Müşteri ilişkilerinizi merkezi hale getirin, satış süreçlerinizi yönetin</p>
                 </div>
                 <div class="p-6 bg-white border border-navy-200 rounded-xl shadow-sm card-hover">
                     <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
@@ -279,8 +288,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="font-semibold text-navy-900 mb-2">Özel Otomasyon</h3>
-                    <p class="text-gray-600 text-sm">İşletmenize özel geliştirilen çözümlerle manuel işleri ortadan kaldırın</p>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="services_icons.automation_title">Özel Otomasyon</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="services_icons.automation_desc">İşletmenize özel geliştirilen çözümlerle manuel işleri ortadan kaldırın</p>
                 </div>
             </div>
         </div>
@@ -290,12 +299,12 @@
     <section id="about" class="py-20 px-6 bg-navy-50">
         <div class="max-w-6xl mx-auto">
             <div class="max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-6">Hakkımızda</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-6" data-i18n="about.title">Hakkımızda</h2>
                 <div class="space-y-4 text-gray-600 leading-relaxed">
-                    <p>
-                        SmartBase olarak 5 kişilik uzman ekibimizle işletmelerin dijital dönüşümünü uçtan uca yönetiyoruz. İhtiyaç analizi, geliştirme, canlıya alma ve sürekli destek süreçlerini tek bir çatı altında toplayarak, işletmenize kesintisiz ve verimli bir dönüşüm deneyimi sunuyoruz.                    <p>
+                    <p data-i18n="about.paragraph1">
+                        SmartBase olarak 5 kişilik uzman ekibimizle işletmelerin dijital dönüşümünü uçtan uca yönetiyoruz. İhtiyaç analizi, geliştirme, canlıya alma ve sürekli destek süreçlerini tek bir çatı altında toplayarak, işletmenize kesintisiz ve verimli bir dönüşüm deneyimi sunuyoruz.
                     </p>
-                    <p>
+                    <p data-i18n="about.paragraph2">
                         Hazır paket yazılımların yetersiz kaldığı noktada devreye giriyor, işletmenize özel, ölçeklenebilir ve gerçekten kullanılan sistemler geliştiriyoruz. Amacımız sadece yazılım üretmek değil; operasyonlarınızı hızlandıran, hataları azaltan ve verimliliğinizi artıran sürdürülebilir bir dijital altyapı kurmanızı sağlamak.
                     </p>
                 </div>
@@ -303,15 +312,15 @@
             
             <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2">Esnek</h3>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.flexible">Esnek</h3>
                    
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2">Çözüm Odaklı</h3>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.solution_oriented">Çözüm Odaklı</h3>
                     
                 </div>
                 <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2">Samimi</h3>
+                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.friendly">Samimi</h3>
                 </div>
             </div>
         </div>
@@ -321,7 +330,7 @@
     <section id="services" class="py-20 px-6 fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4">Hizmetlerimiz</h2>
+                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="services.title">Hizmetlerimiz</h2>
             </div>
             
             <div class="space-y-12">
@@ -333,17 +342,17 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3">ERP Çözümleri</h3>
-                        <p class="text-gray-600 mb-4">Tüm operasyonlarınızı tek sistemde toplayın ve verimliliği artırın.
+                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.erp_title">ERP Çözümleri</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="services.erp_desc">Tüm operasyonlarınızı tek sistemde toplayın ve verimliliği artırın.
 </p>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                               Gerçek zamanlı veri ve raporlama
+                               <span data-i18n="services.erp_feature1">Gerçek zamanlı veri ve raporlama</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                Maliyet ve süreç optimizasyonu
+                                <span data-i18n="services.erp_feature2">Maliyet ve süreç optimizasyonu</span>
                             </li>
                             
                         </ul>
@@ -359,19 +368,19 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3">CRM Çözümleri</h3>
-                        <p class="text-gray-600 mb-4"> Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.</p>
+                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.crm_title">CRM Çözümleri</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="services.crm_desc"> Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.</p>
                         <ul class="space-y-2 text-gray-600">
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                360° müşteri takibi
+                                <span data-i18n="services.crm_feature1">360° müşteri takibi</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                Otomatik satış süreçleri
+                                <span data-i18n="services.crm_feature2">Otomatik satış süreçleri</span>
                             </li>
                         </ul>
                     </div>
@@ -385,21 +394,21 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                             </svg>
                         </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3">Özel Otomasyon</h3>
-                        <p class="text-gray-600 mb-4">Tekrarlayan işleri otomatikleştirin, hız ve doğruluk kazanın.</p>
+                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.automation_title">Özel Otomasyon</h3>
+                        <p class="text-gray-600 mb-4" data-i18n="services.automation_desc">Tekrarlayan işleri otomatikleştirin, hız ve doğruluk kazanın.</p>
                         <ul class="space-y-2 text-gray-600">
                             
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                İnsan hatalarının minimize edilmesi
+                                <span data-i18n="services.automation_feature1">İnsan hatalarının minimize edilmesi</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                Çalışanlarınızın stratejik işlere odaklanması
+                                <span data-i18n="services.automation_feature2">Çalışanlarınızın stratejik işlere odaklanması</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal-500 mr-2">✓</span>
-                                Ölçeklenebilir ve sürdürülebilir sistemler
+                                <span data-i18n="services.automation_feature3">Ölçeklenebilir ve sürdürülebilir sistemler</span>
                             </li>
                         </ul>
                     </div>
@@ -408,7 +417,7 @@
             </div>
             
             <div class="mt-12 text-center">
-                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium">
+                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium" data-i18n="services.cta">
                   İhtiyacını anlat, çözümünü birlikte kuralım
                 </a>
             </div>
@@ -418,34 +427,34 @@
     <!-- Process Section -->
     <section id="process" class="py-20 px-6 bg-navy-900">
         <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">Nasıl Çalışıyoruz</h2>
-            <p class="text-gray-300 mb-12 max-w-2xl">Dijital dönüşüm için net, adım adım bir yaklaşım</p>
+            <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4" data-i18n="process.title">Nasıl Çalışıyoruz</h2>
+            <p class="text-gray-300 mb-12 max-w-2xl" data-i18n="process.subtitle">Dijital dönüşüm için net, adım adım bir yaklaşım</p>
             
             <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
                 <div class="relative">
                     <div class="text-4xl font-bold text-teal-500 mb-4">01</div>
-                    <h3 class="text-xl font-semibold text-white mb-2">İhtiyaç Analizi</h3>
-                    <p class="text-gray-300 text-sm">İşletmenin mevcut süreçleri detaylı incelenir.</p>
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="process.step1_title">İhtiyaç Analizi</h3>
+                    <p class="text-gray-300 text-sm" data-i18n="process.step1_desc">İşletmenin mevcut süreçleri detaylı incelenir.</p>
                 </div>
                 <div class="relative">
                     <div class="text-4xl font-bold text-teal-500 mb-4">02</div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Çözüm Tasarımı</h3>
-                    <p class="text-gray-300 text-sm">En uygun sistem mimarisi planlanır.</p>
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="process.step2_title">Çözüm Tasarımı</h3>
+                    <p class="text-gray-300 text-sm" data-i18n="process.step2_desc">En uygun sistem mimarisi planlanır.</p>
                 </div>
                 <div class="relative">
                     <div class="text-4xl font-bold text-teal-500 mb-4">03</div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Geliştirme</h3>
-                    <p class="text-gray-300 text-sm">Çözümler geliştirilir ve test edilir.</p>
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="process.step3_title">Geliştirme</h3>
+                    <p class="text-gray-300 text-sm" data-i18n="process.step3_desc">Çözümler geliştirilir ve test edilir.</p>
                 </div>
                 <div class="relative">
                     <div class="text-4xl font-bold text-teal-500 mb-4">04</div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Canlıya Alma</h3>
-                    <p class="text-gray-300 text-sm">Sistem devreye alınır.</p>
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="process.step4_title">Canlıya Alma</h3>
+                    <p class="text-gray-300 text-sm" data-i18n="process.step4_desc">Sistem devreye alınır.</p>
                 </div>
                 <div class="relative">
                     <div class="text-4xl font-bold text-teal-500 mb-4">05</div>
-                    <h3 class="text-xl font-semibold text-white mb-2">Destek ve İyileştirme</h3>
-                    <p class="text-gray-300 text-sm">Sürekli destek ve geliştirme sağlanır.</p>
+                    <h3 class="text-xl font-semibold text-white mb-2" data-i18n="process.step5_title">Destek ve İyileştirme</h3>
+                    <p class="text-gray-300 text-sm" data-i18n="process.step5_desc">Sürekli destek ve geliştirme sağlanır.</p>
                 </div>
             </div>
         </div>
@@ -455,8 +464,8 @@
     <section id="cases" class="py-20 px-6 bg-navy-50 fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4">Neler Yaptık?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Gerçek işletmelerde elde ettiğimiz somut sonuçlar ve başarı hikayeleri</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="cases.title">Neler Yaptık?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="cases.subtitle">Gerçek işletmelerde elde ettiğimiz somut sonuçlar ve başarı hikayeleri</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -466,15 +475,15 @@
                         <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded-full">ERP</span>
                         <span class="px-3 py-1 bg-navy-100 text-navy-700 text-xs font-medium rounded-full">Otomasyon</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy-900 mb-4">Üretim Süreçleri Optimizasyonu</h3>
+                    <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case1_title">Üretim Süreçleri Optimizasyonu</h3>
                     <div class="space-y-3">
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Problem</p>
-                            <p class="text-sm text-gray-700">Üretim gecikmeleri ve envanter uyumsuzlukları</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case1_problem_text">Üretim gecikmeleri ve envanter uyumsuzlukları</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Çözüm</p>
-                            <p class="text-sm text-gray-700">ERP sistemi ile üretim planlama ve envanter süreçlerini entegre ettik</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case1_solution_text">ERP sistemi ile üretim planlama ve envanter süreçlerini entegre ettik</p>
                         </div>
                     </div>
                 </div>
@@ -484,15 +493,15 @@
                     <div class="flex items-center gap-2 mb-4">
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">CRM</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy-900 mb-4">Satış ve Müşteri Yönetimi İyileştirmesi</h3>
+                    <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case2_title">Satış ve Müşteri Yönetimi İyileştirmesi</h3>
                     <div class="space-y-3">
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Problem</p>
-                            <p class="text-sm text-gray-700">Lead takibi ve müşteri iletişiminde kopukluk</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case2_problem_text">Lead takibi ve müşteri iletişiminde kopukluk</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Çözüm</p>
-                            <p class="text-sm text-gray-700">CRM sistemi kurarak satış ve müşteri iletişimini merkezi hale getirdik</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case2_solution_text">CRM sistemi kurarak satış ve müşteri iletişimini merkezi hale getirdik</p>
                         </div>
                     </div>
                 </div>
@@ -502,15 +511,15 @@
                     <div class="flex items-center gap-2 mb-4">
                         <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full">Otomasyon</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy-900 mb-4">Operasyonel Süreç Otomasyonu</h3>
+                    <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case3_title">Operasyonel Süreç Otomasyonu</h3>
                     <div class="space-y-3">
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Problem</p>
-                            <p class="text-sm text-gray-700">Manuel ilerleyen işlem süreçleri ve hata oranı</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case3_problem_text">Manuel ilerleyen işlem süreçleri ve hata oranı</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Çözüm</p>
-                            <p class="text-sm text-gray-700">Siparişten ödeme takibine kadar süreçleri otomatik hale getirdik</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case3_solution_text">Siparişten ödeme takibine kadar süreçleri otomatik hale getirdik</p>
                         </div>
                     </div>
                 </div>
@@ -521,22 +530,22 @@
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">CRM</span>
                         <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full">Otomasyon</span>
                     </div>
-                    <h3 class="text-xl font-semibold text-navy-900 mb-4">Müşteri Deneyimi ve Destek Süreçleri</h3>
+                    <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case4_title">Müşteri Deneyimi ve Destek Süreçleri</h3>
                     <div class="space-y-3">
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Problem</p>
-                            <p class="text-sm text-gray-700">Müşteri hizmetlerinde koordinasyon eksikliği</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case4_problem_text">Müşteri hizmetlerinde koordinasyon eksikliği</p>
                         </div>
                         <div>
                             <p class="text-sm text-gray-500 mb-1">Çözüm</p>
-                            <p class="text-sm text-gray-700">Tüm temas noktalarını tek sistemde birleştirdik</p>
+                            <p class="text-sm text-gray-700" data-i18n="cases.case4_solution_text">Tüm temas noktalarını tek sistemde birleştirdik</p>
                         </div>
                     </div>
                 </div>
             </div>
             
             <div class="mt-12 text-center">
-                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium shadow-lg shadow-teal-500/20">
+                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium shadow-lg shadow-teal-500/20" data-i18n="cases.cta">
                     Sizin için ne yapabiliriz? Konuşalım
                 </a>
             </div>
@@ -547,8 +556,8 @@
     <section id="team" class="py-20 px-6 bg-white fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4">Ekibimiz</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">5 kişilik uzman ekibimizle işletmenizin dijital dönüşümünü uçtan uca yönetiyoruz.</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="team.title">Ekibimiz</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="team.subtitle">5 kişilik uzman ekibimizle işletmenizin dijital dönüşümünü uçtan uca yönetiyoruz.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -642,8 +651,8 @@
     <section class="py-20 px-6 bg-navy-50 fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4">Neden SmartBase?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto">Dijital dönüşümde doğru partner seçimi işletmenizin başarısını belirler. İşte bizi farklı kılan özellikler:</p>
+                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="why.title">Neden SmartBase?</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-i18n="why.subtitle">Dijital dönüşümde doğru partner seçimi işletmenizin başarısını belirler. İşte bizi farklı kılan özellikler:</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -654,8 +663,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-navy-900 mb-2">Süreç Odaklı Yaklaşım</h3>
-                    <p class="text-gray-600 text-sm">Önce işletmenizin mevcut süreçlerini detaylı analiz eder, sonra çözüm tasarlarız. Böylece gerçek ihtiyaçlara yönelik sistemler kurarız.</p>
+                    <h3 class="text-lg font-semibold text-navy-900 mb-2" data-i18n="why.card1_title">Süreç Odaklı Yaklaşım</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="why.card1_desc">Önce işletmenizin mevcut süreçlerini detaylı analiz eder, sonra çözüm tasarlarız. Böylece gerçek ihtiyaçlara yönelik sistemler kurarız.</p>
                 </div>
                 
                 <!-- Card 2 -->
@@ -665,8 +674,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-navy-900 mb-2">İşletmeye Özel Çözümler</h3>
-                    <p class="text-gray-600 text-sm">Her işletme farklıdır. Hazır paketler yerine, sizin iş modelinize, büyüklüğünüze ve hedeflerinize göre özelleştirilmiş çözümler sunarız.</p>
+                    <h3 class="text-lg font-semibold text-navy-900 mb-2" data-i18n="why.card2_title">İşletmeye Özel Çözümler</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="why.card2_desc">Her işletme farklıdır. Hazır paketler yerine, sizin iş modelinize, büyüklüğünüze ve hedeflerinize göre özelleştirilmiş çözümler sunarız.</p>
                 </div>
                 
                 <!-- Card 3 -->
@@ -676,8 +685,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-navy-900 mb-2">Uçtan Uca Destek</h3>
-                    <p class="text-gray-600 text-sm">İlk analizden sistem kurulumuna, eğitimden sürekli desteğe kadar tüm süreci birlikte yürütürüz. Yalnız bırakmayız.</p>
+                    <h3 class="text-lg font-semibold text-navy-900 mb-2" data-i18n="why.card3_title">Uçtan Uca Destek</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="why.card3_desc">İlk analizden sistem kurulumuna, eğitimden sürekli desteğe kadar tüm süreci birlikte yürütürüz. Yalnız bırakmayız.</p>
                 </div>
                 
                 <!-- Card 4 -->
@@ -687,13 +696,13 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-lg font-semibold text-navy-900 mb-2">Hızlı Adaptasyon</h3>
-                    <p class="text-gray-600 text-sm">Karmaşık ve uzun süren projeler yerine, hızlı uygulanabilir çözümlerle işletmenizin bir an önce fayda görmesini sağlarız.</p>
+                    <h3 class="text-lg font-semibold text-navy-900 mb-2" data-i18n="why.card4_title">Hızlı Adaptasyon</h3>
+                    <p class="text-gray-600 text-sm" data-i18n="why.card4_desc">Karmaşık ve uzun süren projeler yerine, hızlı uygulanabilir çözümlerle işletmenizin bir an önce fayda görmesini sağlarız.</p>
                 </div>
             </div>
             
             <div class="mt-12 text-center">
-                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium shadow-lg shadow-teal-500/20">
+                <a href="#contact" class="inline-block bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-navy-950 transition-colors font-medium shadow-lg shadow-teal-500/20" data-i18n="why.cta">
                     Analiz talep et
                 </a>
             </div>
@@ -705,11 +714,11 @@
 <section id="contact" class="py-20 px-6 bg-navy-900">
     <div class="max-w-4xl mx-auto text-center">
         
-        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4" data-i18n="contact.title">
             İletişime Geçin
         </h2>
         
-        <p class="text-gray-300 max-w-xl mx-auto mb-10">
+        <p class="text-gray-300 max-w-xl mx-auto mb-10" data-i18n="contact.subtitle">
             Dijital dönüşüm sürecinizi birlikte planlayalım. Size en uygun çözümü konuşmak için bize ulaşın.
         </p>
 
@@ -717,13 +726,13 @@
             
             <!-- Email Button -->
             <a href="mailto:smartbasetr@gmail.com" 
-               class="bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition-all duration-300 font-medium shadow-lg shadow-teal-500/20">
+               class="bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition-all duration-300 font-medium shadow-lg shadow-teal-500/20" data-i18n="contact.email_btn">
                 E-posta ile ulaş
             </a>
 
             <!-- LinkedIn Button -->
             <a href="https://www.linkedin.com/company/smartbase-dijital-dönüşüm" target="_blank"
-               class="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-medium">
+               class="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-medium" data-i18n="contact.linkedin_btn">
                 LinkedIn'den ulaş
             </a>
 
@@ -736,14 +745,14 @@
     <footer class="bg-navy-950 py-8 px-6">
         <div class="max-w-6xl mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="text-gray-400 text-sm mb-4 md:mb-0">
+                <div class="text-gray-400 text-sm mb-4 md:mb-0" data-i18n="footer.copyright">
                     © 2026 SmartBase. Tüm hakları saklıdır.
                 </div>
                 <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                     <a href="mailto:smartbasetr@gmail.com" class="text-gray-400 hover:text-teal-500 text-sm transition-colors">smartbasetr@gmail.com</a>
                     <div class="flex space-x-6">
-                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors">Gizlilik Politikası</a>
-                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors">Kullanım Şartları</a>
+                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors" data-i18n="footer.privacy">Gizlilik Politikası</a>
+                        <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors" data-i18n="footer.terms">Kullanım Şartları</a>
                     </div>
                 </div>
             </div>
@@ -777,7 +786,9 @@
                 
                 // Disable button and show loading state
                 submitButton.disabled = true;
-                submitButton.textContent = 'Gönderiliyor...';
+                const translations = window.i18n.getTranslations();
+                const currentLang = window.i18n.getCurrentLang();
+                submitButton.textContent = translations[currentLang].form.sending;
                 
                 fetch(contactForm.action, {
                     method: 'POST',
@@ -790,25 +801,33 @@
                         // Show success message
                         formSuccess.classList.remove('hidden');
                         contactForm.reset();
-                        submitButton.textContent = 'Gönderildi';
+                        const translations = window.i18n.getTranslations();
+                        const currentLang = window.i18n.getCurrentLang();
+                        submitButton.textContent = translations[currentLang].form.sent;
                         submitButton.disabled = false;
                         
                         // Hide success message after 5 seconds
                         setTimeout(() => {
                             formSuccess.classList.add('hidden');
-                            submitButton.textContent = 'Mesaj Gönder';
+                            const t = window.i18n.getTranslations();
+                            const l = window.i18n.getCurrentLang();
+                            submitButton.textContent = t[l].form.send;
                         }, 5000);
                     } else {
                         // Handle error
-                        alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+                        const translations = window.i18n.getTranslations();
+                        const currentLang = window.i18n.getCurrentLang();
+                        alert(translations[currentLang].form.error);
                         submitButton.disabled = false;
-                        submitButton.textContent = 'Mesaj Gönder';
+                        submitButton.textContent = translations[currentLang].form.send;
                     }
                 }).catch(error => {
                     // Handle network error
-                    alert('Bir hata oluştu. Lütfen daha sonra tekrar deneyin.');
+                    const translations = window.i18n.getTranslations();
+                    const currentLang = window.i18n.getCurrentLang();
+                    alert(translations[currentLang].form.error);
                     submitButton.disabled = false;
-                    submitButton.textContent = 'Mesaj Gönder';
+                    submitButton.textContent = translations[currentLang].form.send;
                 });
             });
         }
@@ -829,7 +848,7 @@
 
         // Dynamic Text Rotation - Horizontal Fade
         const dynamicTextElement = document.getElementById('dynamic-text');
-        const dynamicWords = ['ERP', 'CRM', 'Özel Otomasyon', 'Dijital Dönüşüm'];
+        let dynamicWords = ['ERP', 'CRM', 'Özel Otomasyon', 'Dijital Dönüşüm'];
         let dynamicIndex = 0;
         const displayTime = 2500; // 2.5 seconds display
         const fadeTime = 800; // 0.8 seconds fade

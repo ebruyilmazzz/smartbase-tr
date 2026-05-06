@@ -1,0 +1,268 @@
+{
+  "tr": {
+    "nav": {
+      "about": "Hakkımızda",
+      "services": "Hizmetler",
+      "team": "Ekip",
+      "process": "Süreç",
+      "cases": "Başarı Hikayeleri",
+      "contact": "İletişim"
+    },
+    "hero": {
+      "subtitle": "İşletmenizin süreçlerini hızlandıran, maliyetleri azaltan ve büyümenizi destekleyen ERP, CRM ve otomasyon çözümleri sunuyoruz.",
+      "cta": "Analiz talep et",
+      "dynamic_words": ["ERP", "CRM", "Özel Otomasyon", "Dijital Dönüşüm"]
+    },
+    "services_icons": {
+      "erp_title": "ERP Çözümleri",
+      "erp_desc": "Üretimden finansa kadar tüm süreçlerinizi tek sistemde yönetin",
+      "crm_title": "CRM Çözümleri",
+      "crm_desc": "Müşteri ilişkilerinizi merkezi hale getirin, satış süreçlerinizi yönetin",
+      "automation_title": "Özel Otomasyon",
+      "automation_desc": "İşletmenize özel geliştirilen çözümlerle manuel işleri ortadan kaldırın"
+    },
+    "about": {
+      "title": "Hakkımızda",
+      "paragraph1": "SmartBase olarak 5 kişilik uzman ekibimizle işletmelerin dijital dönüşümünü uçtan uca yönetiyoruz. İhtiyaç analizi, geliştirme, canlıya alma ve sürekli destek süreçlerini tek bir çatı altında toplayarak, işletmenize kesintisiz ve verimli bir dönüşüm deneyimi sunuyoruz.",
+      "paragraph2": "Hazır paket yazılımların yetersiz kaldığı noktada devreye giriyor, işletmenize özel, ölçeklenebilir ve gerçekten kullanılan sistemler geliştiriyoruz. Amacımız sadece yazılım üretmek değil; operasyonlarınızı hızlandıran, hataları azaltan ve verimliliğinizi artıran sürdürülebilir bir dijital altyapı kurmanızı sağlamak.",
+      "flexible": "Esnek",
+      "solution_oriented": "Çözüm Odaklı",
+      "friendly": "Samimi"
+    },
+    "services": {
+      "title": "Hizmetlerimiz",
+      "erp_title": "ERP Çözümleri",
+      "erp_desc": "Tüm operasyonlarınızı tek sistemde toplayın ve verimliliği artırın.",
+      "erp_feature1": "Gerçek zamanlı veri ve raporlama",
+      "erp_feature2": "Maliyet ve süreç optimizasyonu",
+      "crm_title": "CRM Çözümleri",
+      "crm_desc": "Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.",
+      "crm_feature1": "360° müşteri takibi",
+      "crm_feature2": "Otomatik satış süreçleri",
+      "automation_title": "Özel Otomasyon",
+      "automation_desc": "Tekrarlayan işleri otomatikleştirin, hız ve doğruluk kazanın.",
+      "automation_feature1": "İnsan hatalarının minimize edilmesi",
+      "automation_feature2": "Çalışanlarınızın stratejik işlere odaklanması",
+      "automation_feature3": "Ölçeklenebilir ve sürdürülebilir sistemler",
+      "cta": "İhtiyacını anlat, çözümünü birlikte kuralım"
+    },
+    "process": {
+      "title": "Nasıl Çalışıyoruz",
+      "subtitle": "Dijital dönüşüm için net, adım adım bir yaklaşım",
+      "step1_title": "İhtiyaç Analizi",
+      "step1_desc": "İşletmenin mevcut süreçleri detaylı incelenir.",
+      "step2_title": "Çözüm Tasarımı",
+      "step2_desc": "En uygun sistem mimarisi planlanır.",
+      "step3_title": "Geliştirme",
+      "step3_desc": "Çözümler geliştirilir ve test edilir.",
+      "step4_title": "Canlıya Alma",
+      "step4_desc": "Sistem devreye alınır.",
+      "step5_title": "Destek ve İyileştirme",
+      "step5_desc": "Sürekli destek ve geliştirme sağlanır."
+    },
+    "cases": {
+      "title": "Neler Yaptık?",
+      "subtitle": "Gerçek işletmelerde elde ettiğimiz somut sonuçlar ve başarı hikayeleri",
+      "case1_title": "Üretim Süreçleri Optimizasyonu",
+      "case1_problem": "Problem",
+      "case1_problem_text": "Üretim gecikmeleri ve envanter uyumsuzlukları",
+      "case1_solution": "Çözüm",
+      "case1_solution_text": "ERP sistemi ile üretim planlama ve envanter süreçlerini entegre ettik",
+      "case2_title": "Satış ve Müşteri Yönetimi İyileştirmesi",
+      "case2_problem_text": "Lead takibi ve müşteri iletişiminde kopukluk",
+      "case2_solution_text": "CRM sistemi kurarak satış ve müşteri iletişimini merkezi hale getirdik",
+      "case3_title": "Operasyonel Süreç Otomasyonu",
+      "case3_problem_text": "Manuel ilerleyen işlem süreçleri ve hata oranı",
+      "case3_solution_text": "Siparişten ödeme takibine kadar süreçleri otomatik hale getirdik",
+      "case4_title": "Müşteri Deneyimi ve Destek Süreçleri",
+      "case4_problem_text": "Müşteri hizmetlerinde koordinasyon eksikliği",
+      "case4_solution_text": "Tüm temas noktalarını tek sistemde birleştirdik",
+      "cta": "Sizin için ne yapabiliriz? Konuşalım"
+    },
+    "team": {
+      "title": "Ekibimiz",
+      "subtitle": "5 kişilik uzman ekibimizle işletmenizin dijital dönüşümünü uçtan uca yönetiyoruz.",
+      "member1_name": "Bilal Ertuğrul",
+      "member1_role": "Project Manager",
+      "member1_desc": "Proje yönetimi ve stratejik planlama",
+      "member2_name": "Süreyya Erat",
+      "member2_role": "Back-End Developer",
+      "member2_desc": "Sistem altyapısını geliştirir ve veri akışlarını yönetir.",
+      "member3_name": "Ebru Yılmaz",
+      "member3_role": "Front-End Developer",
+      "member3_role2": "Marketing Specialist",
+      "member3_desc": "Kullanıcı dostu arayüzler geliştirir ve marka iletişimini yönetir.",
+      "member4_name": "Betül Seyrek",
+      "member4_role": "Business & Process Analyst",
+      "member4_role2": "Test Specialist",
+      "member4_desc": "İş süreçlerini analiz eder ve sistem kalitesini garanti altına alır.",
+      "member5_name": "Ahmet Talha Can",
+      "member5_role": "Back-End Developer",
+      "member5_role2": "IT Specialist",
+      "member5_desc": "Teknik altyapı ve sistem yönetimi süreçlerinde görev alır."
+    },
+    "why": {
+      "title": "Neden SmartBase?",
+      "subtitle": "Dijital dönüşümde doğru partner seçimi işletmenizin başarısını belirler. İşte bizi farklı kılan özellikler:",
+      "card1_title": "Süreç Odaklı Yaklaşım",
+      "card1_desc": "Önce işletmenizin mevcut süreçlerini detaylı analiz eder, sonra çözüm tasarlarız. Böylece gerçek ihtiyaçlara yönelik sistemler kurarız.",
+      "card2_title": "İşletmeye Özel Çözümler",
+      "card2_desc": "Her işletme farklıdır. Hazır paketler yerine, sizin iş modelinize, büyüklüğünüze ve hedeflerinize göre özelleştirilmiş çözümler sunarız.",
+      "card3_title": "Uçtan Uca Destek",
+      "card3_desc": "İlk analizden sistem kurulumuna, eğitimden sürekli desteğe kadar tüm süreci birlikte yürütürüz. Yalnız bırakmayız.",
+      "card4_title": "Hızlı Adaptasyon",
+      "card4_desc": "Karmaşık ve uzun süren projeler yerine, hızlı uygulanabilir çözümlerle işletmenizin bir an önce fayda görmesini sağlarız.",
+      "cta": "Analiz talep et"
+    },
+    "contact": {
+      "title": "İletişime Geçin",
+      "subtitle": "Dijital dönüşüm sürecinizi birlikte planlayalım. Size en uygun çözümü konuşmak için bize ulaşın.",
+      "email_btn": "E-posta ile ulaş",
+      "linkedin_btn": "LinkedIn'den ulaş"
+    },
+    "footer": {
+      "copyright": "© 2026 SmartBase. Tüm hakları saklıdır.",
+      "privacy": "Gizlilik Politikası",
+      "terms": "Kullanım Şartları"
+    },
+    "form": {
+      "sending": "Gönderiliyor...",
+      "sent": "Gönderildi",
+      "send": "Mesaj Gönder",
+      "error": "Bir hata oluştu. Lütfen daha sonra tekrar deneyin."
+    }
+  },
+  "en": {
+    "nav": {
+      "about": "About Us",
+      "services": "Services",
+      "team": "Team",
+      "process": "Process",
+      "cases": "Success Stories",
+      "contact": "Contact"
+    },
+    "hero": {
+      "subtitle": "We offer ERP, CRM, and automation solutions that accelerate your business processes, reduce costs, and support your growth.",
+      "cta": "Request Analysis",
+      "dynamic_words": ["ERP", "CRM", "Custom Automation", "Digital Transformation"]
+    },
+    "services_icons": {
+      "erp_title": "ERP Solutions",
+      "erp_desc": "Manage all your processes from production to finance in a single system",
+      "crm_title": "CRM Solutions",
+      "crm_desc": "Centralize your customer relationships and manage your sales processes",
+      "automation_title": "Custom Automation",
+      "automation_desc": "Eliminate manual tasks with solutions developed specifically for your business"
+    },
+    "about": {
+      "title": "About Us",
+      "paragraph1": "As SmartBase, we manage the digital transformation of businesses end-to-end with our team of 5 experts. By bringing needs analysis, development, deployment, and continuous support processes under one roof, we offer your business an uninterrupted and efficient transformation experience.",
+      "paragraph2": "We step in where off-the-shelf software falls short, developing systems that are customized, scalable, and actually used. Our goal is not just to produce software, but to help you establish a sustainable digital infrastructure that accelerates your operations, reduces errors, and increases your efficiency.",
+      "flexible": "Flexible",
+      "solution_oriented": "Solution Oriented",
+      "friendly": "Friendly"
+    },
+    "services": {
+      "title": "Our Services",
+      "erp_title": "ERP Solutions",
+      "erp_desc": "Consolidate all your operations in one system and increase efficiency.",
+      "erp_feature1": "Real-time data and reporting",
+      "erp_feature2": "Cost and process optimization",
+      "crm_title": "CRM Solutions",
+      "crm_desc": "Manage your customer relationships and accelerate your sales processes.",
+      "crm_feature1": "360° customer tracking",
+      "crm_feature2": "Automated sales processes",
+      "automation_title": "Custom Automation",
+      "automation_desc": "Automate repetitive tasks and gain speed and accuracy.",
+      "automation_feature1": "Minimizing human errors",
+      "automation_feature2": "Employees focusing on strategic tasks",
+      "automation_feature3": "Scalable and sustainable systems",
+      "cta": "Tell us your needs, let's build the solution together"
+    },
+    "process": {
+      "title": "How We Work",
+      "subtitle": "A clear, step-by-step approach to digital transformation",
+      "step1_title": "Needs Analysis",
+      "step1_desc": "The business's current processes are examined in detail.",
+      "step2_title": "Solution Design",
+      "step2_desc": "The most suitable system architecture is planned.",
+      "step3_title": "Development",
+      "step3_desc": "Solutions are developed and tested.",
+      "step4_title": "Deployment",
+      "step4_desc": "The system is put into operation.",
+      "step5_title": "Support and Improvement",
+      "step5_desc": "Continuous support and development is provided."
+    },
+    "cases": {
+      "title": "What We've Done",
+      "subtitle": "Concrete results and success stories we've achieved in real businesses",
+      "case1_title": "Production Process Optimization",
+      "case1_problem": "Problem",
+      "case1_problem_text": "Production delays and inventory inconsistencies",
+      "case1_solution": "Solution",
+      "case1_solution_text": "We integrated production planning and inventory processes with an ERP system",
+      "case2_title": "Sales and Customer Management Improvement",
+      "case2_problem_text": "Disconnection in lead tracking and customer communication",
+      "case2_solution_text": "We centralized sales and customer communication by establishing a CRM system",
+      "case3_title": "Operational Process Automation",
+      "case3_problem_text": "Manually progressing transaction processes and error rate",
+      "case3_solution_text": "We automated processes from order to payment tracking",
+      "case4_title": "Customer Experience and Support Processes",
+      "case4_problem_text": "Lack of coordination in customer service",
+      "case4_solution_text": "We united all touchpoints in a single system",
+      "cta": "What can we do for you? Let's talk"
+    },
+    "team": {
+      "title": "Our Team",
+      "subtitle": "We manage the digital transformation of your business end-to-end with our team of 5 experts.",
+      "member1_name": "Bilal Ertuğrul",
+      "member1_role": "Project Manager",
+      "member1_desc": "Project management and strategic planning",
+      "member2_name": "Süreyya Erat",
+      "member2_role": "Back-End Developer",
+      "member2_desc": "Develops system infrastructure and manages data flows.",
+      "member3_name": "Ebru Yılmaz",
+      "member3_role": "Front-End Developer",
+      "member3_role2": "Marketing Specialist",
+      "member3_desc": "Develops user-friendly interfaces and manages brand communication.",
+      "member4_name": "Betül Seyrek",
+      "member4_role": "Business & Process Analyst",
+      "member4_role2": "Test Specialist",
+      "member4_desc": "Analyzes business processes and ensures system quality.",
+      "member5_name": "Ahmet Talha Can",
+      "member5_role": "Back-End Developer",
+      "member5_role2": "IT Specialist",
+      "member5_desc": "Works in technical infrastructure and system management processes."
+    },
+    "why": {
+      "title": "Why SmartBase?",
+      "subtitle": "Choosing the right partner for digital transformation determines your business's success. Here's what sets us apart:",
+      "card1_title": "Process-Oriented Approach",
+      "card1_desc": "We first analyze your business's current processes in detail, then design solutions. This way, we build systems that address real needs.",
+      "card2_title": "Business-Specific Solutions",
+      "card2_desc": "Every business is different. Instead of off-the-shelf packages, we offer customized solutions based on your business model, size, and goals.",
+      "card3_title": "End-to-End Support",
+      "card3_desc": "We walk the entire process together from initial analysis to system setup, training to continuous support. We won't leave you alone.",
+      "card4_title": "Quick Adaptation",
+      "card4_desc": "Instead of complex and long-running projects, we ensure your business benefits as soon as possible with quickly implementable solutions.",
+      "cta": "Request Analysis"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "subtitle": "Let's plan your digital transformation process together. Contact us to discuss the best solution for you.",
+      "email_btn": "Reach via Email",
+      "linkedin_btn": "Reach via LinkedIn"
+    },
+    "footer": {
+      "copyright": "© 2026 SmartBase. All rights reserved.",
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "form": {
+      "sending": "Sending...",
+      "sent": "Sent",
+      "send": "Send Message",
+      "error": "An error occurred. Please try again later."
+    }
+  }
+}
