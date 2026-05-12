@@ -1,15 +1,134 @@
-<h1>Kullanım Şartları</h1>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kullanım Şartları - SmartBase</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            50: '#F5F7FA',
+                            100: '#E8EDF3',
+                            200: '#D1DBE6',
+                            300: '#AAB9C9',
+                            400: '#8397AC',
+                            500: '#5C758F',
+                            600: '#355372',
+                            700: '#2A415C',
+                            800: '#1F2E46',
+                            900: '#132F4C',
+                            950: '#0B1F3A',
+                        },
+                        teal: {
+                            50: '#E8F7F7',
+                            100: '#D0EEEE',
+                            200: '#A1E0E0',
+                            300: '#72D2D2',
+                            400: '#43C4C4',
+                            500: '#1FA2A6',
+                            600: '#198285',
+                            700: '#136264',
+                            800: '#0D4243',
+                            900: '#072222',
+                            950: '#031111',
+                        },
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navigation -->
+    <nav class="bg-white border-b border-navy-200">
+        <div class="max-w-6xl mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="index.html" class="flex items-center gap-3">
+                    <img src="image/SmartBaseLogo.png" alt="SmartBase Logo" class="h-14">
+                    <div class="flex flex-col leading-tight">
+                        <div class="text-xl font-bold tracking-wide">
+                            <span style="color: #0B2A5B;">Smart</span>
+                            <span style="color: #1FA3B8;">Base</span>
+                        </div>
+                        <span class="text-base font-medium mt-0.5" style="color: #E53935;">
+                            Dijital Dönüşüm
+                        </span>
+                    </div>
+                </a>
+                <a href="index.html" class="text-gray-600 hover:text-teal-500 transition-colors">Ana Sayfa</a>
+            </div>
+        </div>
+    </nav>
 
-<p>Bu web sitesini kullanarak aşağıdaki şartları kabul etmiş sayılırsınız.</p>
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-6 py-16">
+        <div class="bg-white rounded-xl shadow-sm border border-navy-200 p-8 md:p-12">
+            <h1 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-8">Kullanım Şartları</h1>
+            
+            <p class="text-gray-600 mb-8 leading-relaxed">
+                Bu web sitesini kullanarak aşağıdaki şartları kabul etmiş sayılırsınız.
+            </p>
 
-<h3>Hizmet Kapsamı</h3>
-<p>SmartBase, dijital dönüşüm ve yazılım danışmanlığı hizmeti sunar.</p>
+            <div class="space-y-8">
+                <section>
+                    <h2 class="text-xl font-semibold text-navy-900 mb-3">Hizmet Kapsamı</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        SmartBase, dijital dönüşüm ve yazılım danışmanlığı hizmeti sunar.
+                    </p>
+                </section>
 
-<h3>Sorumluluk Reddi</h3>
-<p>Sitedeki bilgilerin doğruluğu için çaba gösterilir ancak garanti edilmez.</p>
+                <section>
+                    <h2 class="text-xl font-semibold text-navy-900 mb-3">Sorumluluk Reddi</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Sitedeki bilgilerin doğruluğu için çaba gösterilir ancak garanti edilmez.
+                    </p>
+                </section>
 
-<h3>Telif Hakları</h3>
-<p>Site içeriği SmartBase’e aittir ve izinsiz kullanılamaz.</p>
+                <section>
+                    <h2 class="text-xl font-semibold text-navy-900 mb-3">Telif Hakları</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        Site içeriği SmartBase'e aittir ve izinsiz kullanılamaz.
+                    </p>
+                </section>
 
-<h3>Değişiklikler</h3>
-<p>SmartBase, bu şartları güncelleme hakkını saklı tutar.</p>
+                <section>
+                    <h2 class="text-xl font-semibold text-navy-900 mb-3">Değişiklikler</h2>
+                    <p class="text-gray-600 leading-relaxed">
+                        SmartBase, bu şartları güncelleme hakkını saklı tutar.
+                    </p>
+                </section>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-navy-200">
+                <a href="index.html" class="inline-block bg-teal-500 text-white px-6 py-3 rounded-lg hover:bg-navy-950 transition-colors font-medium">
+                    Ana Sayfaya Dön
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-navy-900 py-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
+                <p class="text-gray-400 text-sm"> 2024 SmartBase. Tüm hakları saklıdır.</p>
+                <div class="flex space-x-6">
+                    <a href="mailto:smartbasetr@gmail.com" class="text-gray-400 hover:text-teal-500 text-sm transition-colors">smartbasetr@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

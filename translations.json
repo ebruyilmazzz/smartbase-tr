@@ -8,6 +8,13 @@
       "cases": "Başarı Hikayeleri",
       "contact": "İletişim"
     },
+
+  
+    "brand": {
+      "tagline": "Dijital Dönüşüm"
+    },
+    
+
     "hero": {
       "title_prefix": "SmartBase |",
       "subtitle": "İşletmenizin süreçlerini hızlandıran, maliyetleri azaltan ve büyümenizi destekleyen ERP, CRM ve otomasyon çözümleri sunuyoruz.",
@@ -37,7 +44,7 @@
       "erp_feature1": "Gerçek zamanlı veri ve raporlama",
       "erp_feature2": "Maliyet ve süreç optimizasyonu",
       "crm_title": "CRM Çözümleri",
-      "crm_desc": "Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.",
+      "crm_desc": "OtomasyonCase 3Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.",
       "crm_feature1": "360° müşteri takibi",
       "crm_feature2": "Otomatik satış süreçleri",
       "automation_title": "Özel Otomasyon",
@@ -65,6 +72,7 @@
       "title": "Neler Yaptık?",
       "subtitle": "Gerçek işletmelerde elde ettiğimiz somut sonuçlar ve başarı hikayeleri",
       "problem_label": "Sorun",
+      "automation": "Otomasyon",
       "solution_label": "Çözüm",
       "case1_title": "Üretim Süreçleri Optimizasyonu",
       "case1_problem_text": "Üretim gecikmeleri ve envanter uyumsuzlukları",
@@ -149,6 +157,10 @@
       "cases": "Success Stories",
       "contact": "Contact"
     },
+   
+   "brand": {
+      "tagline": "Digital Transformation"
+    },
     "hero": {
       "title_prefix": "SmartBase |",
       "subtitle": "We offer ERP, CRM, and automation solutions that accelerate your business processes, reduce costs, and support your growth.",
@@ -206,6 +218,7 @@
       "title": "What We've Done",
       "subtitle": "Concrete results and success stories we've achieved in real businesses",
       "problem_label": "Problem",
+      "automation": "Automation",
       "solution_label": "Solution",
       "case1_title": "Production Process Optimization",
       "case1_problem_text": "Production delays and inventory inconsistencies",
@@ -282,3 +295,4 @@
     }
   }
 }
+

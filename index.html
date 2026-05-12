@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="SmartBase - Your trusted partner for innovative solutions">
+    <meta name="keywords" content="SmartBase, technology, innovation, solutions">
+    <meta name="author" content="SmartBase">
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="image/SmartBaseLogo.png">
-    <title>SmartBase</title>
+    <!-- Dinamik title -->
+    <title id="page-title">SmartBase | </title>
+    <span class="dynamic-text-wrapper">
+    <span id="dynamic-title" class="dynamic-title text-teal-500 text-xl md:text-2xl font-semibold">
+        ERP
+    </span>
+</span>
+    
+
     <link rel="alternate" hreflang="tr" href="https://yourdomain.com/">
     <link rel="alternate" hreflang="en" href="https://yourdomain.com/en">
     <link rel="alternate" hreflang="x-default" href="https://yourdomain.com/">
@@ -47,6 +60,49 @@
                 }
             }
         }
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const texts = {
+        tr: ["ERP", "CRM", "Dijital Dönüşüm", "Özel Otomasyon"],
+        en: ["ERP", "CRM", "Digital Transformation", "Custom Automation"]
+    };
+
+    let index = 0;
+
+    const dynamicText = document.getElementById("dynamic-text");
+    const pageTitle = document.getElementById("page-title");
+
+    function getCurrentLang() {
+        return document.documentElement.lang || "tr";
+    }
+
+    function changeText() {
+        const currentLang = getCurrentLang();
+        const currentTexts = texts[currentLang];
+
+        index = (index + 1) % currentTexts.length;
+
+        dynamicText.textContent = currentTexts[index];
+        pageTitle.textContent = "SmartBase | " + currentTexts[index];
+    }
+
+    setInterval(changeText, 2000);
+
+    // Dil değişince ANINDA güncelle
+    document.getElementById("lang-switch").addEventListener("click", () => {
+        index = 0;
+
+        setTimeout(() => {
+            const currentLang = getCurrentLang();
+            dynamicText.textContent = texts[currentLang][0];
+            pageTitle.textContent = "SmartBase | " + texts[currentLang][0];
+        }, 50);
+    });
+
+});
+
+
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -155,6 +211,42 @@
             transform: translateY(8px);
         }
 
+        /* Fixed width container for dynamic text - prevents CLS */
+        .dynamic-text-wrapper {
+            display: inline-block;
+            width: 180px;
+            max-width: 180px;
+            overflow: hidden;
+            text-align: left;
+            vertical-align: middle;
+            flex-shrink: 0;
+        }
+
+        @media (min-width: 640px) {
+            .dynamic-text-wrapper {
+                width: 220px;
+                max-width: 220px;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .dynamic-text-wrapper {
+                width: 300px;
+                max-width: 300px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .browser-tab .flex.items-center.justify-center.gap-3 {
+                flex-direction: column;
+            }
+
+    .dynamic-text-wrapper {
+        text-align: center;
+    }
+}
+
+
         /* CTA Button - Clean Corporate */
         .cta-primary {
             background: #1FA2A6;
@@ -177,6 +269,10 @@
             background: radial-gradient(circle, rgba(31, 162, 166, 0.03) 0%, transparent 70%);
             pointer-events: none;
         }
+        .justify-text 
+        {
+    text-align: justify;
+        }
     </style>
 </head>
 <body class="bg-white text-gray-900">
@@ -184,8 +280,26 @@
     <nav class="fixed top-0 left-0 right-0 bg-white z-50 border-b border-navy-200">
         <div class="max-w-6xl mx-auto px-6 py-4">
             <div class="flex items-center justify-between">
-                <a href="#" class="flex items-center">
-                    <img src="image/SmartBase Logo+Yazı.png" alt="SmartBase Logo" class="h-11">
+               <a href="" class="flex items-center gap-3">
+                    <img src="image/SmartBaseLogo.png" alt="SmartBase Logo" class="h-14">
+                    
+                    <div class="flex flex-col leading-tight">
+                        
+                        <!-- SmartBase -->
+                        <div class="text-xl font-bold tracking-wide">
+                            <span style="color: #0B2A5B;" data-i18n="brand.smart">Smart</span>
+                            <span style="color: #1FA3B8;" data-i18n="brand.base">Base</span>
+                        </div>
+
+                        <!-- Alt yazı -->
+                        <span 
+                            class="text-base font-medium mt-0.5"
+                            style="color: #E53935;"
+                            data-i18n="brand.tagline">
+                            Dijital Dönüşüm
+                        </span>
+
+                    </div>
                 </a>
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.about">Hakkımızda</a>
@@ -234,13 +348,15 @@
                     </div>
                     
                     <!-- Title -->
-                    <div class="flex items-center tracking-wide">
-                        <!-- 1. DEĞİŞİKLİK: whitespace-nowrap eklendi -->
-                        <span class="text-white/90 text-xl md:text-2xl font-semibold mr-2 whitespace-nowrap" data-i18n="hero.title_prefix">SmartBase |</span>
+                    <div class="flex flex-wrap items-center justify-center tracking-wide">
+                        <!-- Static text - remains fixed -->
+                    <span class="text-white/90 text-lg md:text-2xl font-semibold mr-2 whitespace-nowrap flex-shrink-0"> SmartBase |</span>
                         
-                        <!-- 2. DEĞİŞİKLİK: Dinamik metin için sabit genişlikli kapsayıcı eklendi -->
-                        <span class="inline-block text-left w-[120px] md:w-[160px]">
-                            <span id="dynamic-text" class="dynamic-text text-teal-500 text-xl md:text-2xl font-semibold">ERP</span>
+                        <!-- Dynamic text container - fixed width to prevent CLS -->
+                        <span class="dynamic-text-wrapper">
+                            <span id="dynamic-text" class="dynamic-text text-teal-500 text-lg md:text-2xl font-semibold">
+                                ERP
+                            </span>
                         </span>
                     </div>
                 </div>
@@ -295,36 +411,72 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-20 px-6 bg-navy-50">
-        <div class="max-w-6xl mx-auto">
-            <div class="max-w-3xl">
-                <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-6" data-i18n="about.title">Hakkımızda</h2>
-                <div class="space-y-4 text-gray-600 leading-relaxed">
-                    <p data-i18n="about.paragraph1">
-                        SmartBase olarak 5 kişilik uzman ekibimizle işletmelerin dijital dönüşümünü uçtan uca yönetiyoruz. İhtiyaç analizi, geliştirme, canlıya alma ve sürekli destek süreçlerini tek bir çatı altında toplayarak, işletmenize kesintisiz ve verimli bir dönüşüm deneyimi sunuyoruz.
-                    </p>
-                    <p data-i18n="about.paragraph2">
-                        Hazır paket yazılımların yetersiz kaldığı noktada devreye giriyor, işletmenize özel, ölçeklenebilir ve gerçekten kullanılan sistemler geliştiriyoruz. Amacımız sadece yazılım üretmek değil; operasyonlarınızı hızlandıran, hataları azaltan ve verimliliğinizi artıran sürdürülebilir bir dijital altyapı kurmanızı sağlamak.
-                    </p>
-                </div>
+   <!-- About Section -->
+<section id="about" class="py-24 px-6 bg-navy-50">
+    <div class="max-w-6xl mx-auto">
+
+        <!-- Text Content -->
+        <div class="max-w-4xl">
+            <h2 class="text-4xl md:text-5xl font-semibold text-navy-900 mb-8 leading-tight"
+                data-i18n="about.title">
+                Hakkımızda
+            </h2>
+
+            <div class="space-y-8 text-lg leading-9 text-gray-700">
+               <div class="flex flex-col gap-8">
+                <p class="text-lg leading-9 text-gray-600 max-w-2xl text-justify"
+                data-i18n="about.paragraph1">
+                    SmartBase olarak 5 kişilik uzman ekibimizle işletmelerin dijital dönüşümünü
+                    uçtan uca yönetiyoruz. İhtiyaç analizi, geliştirme, canlıya alma ve sürekli
+                    destek süreçlerini tek bir çatı altında toplayarak işletmenize kesintisiz
+                    ve verimli bir dönüşüm deneyimi sunuyoruz.
+                </p>
+
+                <p class="text-lg leading-9 text-gray-600 max-w-2xl text-justify"
+                data-i18n="about.paragraph2">
+                    Hazır paket yazılımların yetersiz kaldığı noktada devreye giriyor,
+                    işletmenize özel, ölçeklenebilir ve gerçekten kullanılan sistemler geliştiriyoruz.
+                    Amacımız sadece yazılım üretmek değil; operasyonlarınızı hızlandıran,
+                    hataları azaltan ve verimliliğinizi artıran sürdürülebilir bir dijital altyapı
+                    kurmanızı sağlamak.
+                </p>
             </div>
-            
-            <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.flexible">Esnek</h3>
-                   
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.solution_oriented">Çözüm Odaklı</h3>
-                    
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-sm card-hover">
-                    <h3 class="font-semibold text-navy-900 mb-2" data-i18n="about.friendly">Samimi</h3>
-                </div>
             </div>
         </div>
-    </section>
+
+        <!-- Feature Cards -->
+        <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white border border-navy-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover">
+                
+
+                <h3 class="text-xl font-semibold text-navy-900 mb-3"
+                    data-i18n="about.flexible">
+                    Esnek
+                </h3>                
+            </div>
+
+            <div class="bg-white border border-navy-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover">
+               
+
+                <h3 class="text-xl font-semibold text-navy-900 mb-3"
+                    data-i18n="about.solution_oriented">
+                    Çözüm Odaklı
+                </h3>
+            </div>
+
+            <div class="bg-white border border-navy-100 p-8 rounded-2xl shadow-sm hover:shadow-md transition-all duration-300 card-hover">
+               
+
+                <h3 class="text-xl font-semibold text-navy-900 mb-3"
+                    data-i18n="about.friendly">
+                    Samimi
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="py-20 px-6 fade-in-section">
@@ -333,86 +485,66 @@
                 <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="services.title">Hizmetlerimiz</h2>
             </div>
             
-            <div class="space-y-12">
-                <!-- ERP -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start fade-in-section">
-                    <div>
-                        <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.erp_title">ERP Çözümleri</h3>
-                        <p class="text-gray-600 mb-4" data-i18n="services.erp_desc">Tüm operasyonlarınızı tek sistemde toplayın ve verimliliği artırın.
-</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                               <span data-i18n="services.erp_feature1">Gerçek zamanlı veri ve raporlama</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.erp_feature2">Maliyet ve süreç optimizasyonu</span>
-                            </li>
-                            
-                        </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- ERP Card -->
+                <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 card-hover fade-in-section">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded-full">ERP</span>
                     </div>
-                   
+                    <h3 class="text-xl font-semibold text-navy-900 mb-3" data-i18n="services.erp_title">ERP Çözümleri</h3>
+                    <p class="text-gray-600 mb-4 text-sm" data-i18n="services.erp_desc">Tüm operasyonlarınızı tek sistemde toplayın ve verimliliği artırın.</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.erp_feature1">Gerçek zamanlı veri ve raporlama</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.erp_feature2">Maliyet ve süreç optimizasyonu</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- CRM -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start fade-in-section">
-                    <div>
-                        <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.crm_title">CRM Çözümleri</h3>
-                        <p class="text-gray-600 mb-4" data-i18n="services.crm_desc"> Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.crm_feature1">360° müşteri takibi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.crm_feature2">Otomatik satış süreçleri</span>
-                            </li>
-                        </ul>
+                <!-- CRM Card -->
+                <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 card-hover fade-in-section">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">CRM</span>
                     </div>
+                    <h3 class="text-xl font-semibold text-navy-900 mb-3" data-i18n="services.crm_title">CRM Çözümleri</h3>
+                    <p class="text-gray-600 mb-4 text-sm" data-i18n="services.crm_desc">Müşteri ilişkilerinizi yönetin, satış süreçlerinizi hızlandırın.</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.crm_feature1">360° müşteri takibi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.crm_feature2">Otomatik satış süreçleri</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- Automation -->
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start fade-in-section">
-                    <div>
-                        <div class="w-12 h-12 bg-teal-500 rounded-lg flex items-center justify-center mb-4">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <h3 class="text-2xl font-semibold text-navy-900 mb-3" data-i18n="services.automation_title">Özel Otomasyon</h3>
-                        <p class="text-gray-600 mb-4" data-i18n="services.automation_desc">Tekrarlayan işleri otomatikleştirin, hız ve doğruluk kazanın.</p>
-                        <ul class="space-y-2 text-gray-600">
-                            
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.automation_feature1">İnsan hatalarının minimize edilmesi</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.automation_feature2">Çalışanlarınızın stratejik işlere odaklanması</span>
-                            </li>
-                            <li class="flex items-start">
-                                <span class="text-teal-500 mr-2">✓</span>
-                                <span data-i18n="services.automation_feature3">Ölçeklenebilir ve sürdürülebilir sistemler</span>
-                            </li>
-                        </ul>
+                <!-- Automation Card -->
+                <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 card-hover fade-in-section">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span data-i18n="cases.automation" class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full">Otomasyon</span>
                     </div>
-                    
+                    <h3 class="text-xl font-semibold text-navy-900 mb-3" data-i18n="services.automation_title">Özel Otomasyon</h3>
+                    <p class="text-gray-600 mb-4 text-sm" data-i18n="services.automation_desc">Tekrarlayan işleri otomatikleştirin, hız ve doğruluk kazanın.</p>
+                    <ul class="space-y-2 text-gray-600 text-sm">
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.automation_feature1">İnsan hatalarının minimize edilmesi</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.automation_feature2">Çalışanlarınızın stratejik işlere odaklanması</span>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="text-teal-500 mr-2">✓</span>
+                            <span data-i18n="services.automation_feature3">Ölçeklenebilir ve sürdürülebilir sistemler</span>
+                        </li>
+                    </ul>
                 </div>
             </div>
             
@@ -473,7 +605,10 @@
                 <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm card-hover fade-in-section">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="px-3 py-1 bg-teal-100 text-teal-700 text-xs font-medium rounded-full">ERP</span>
-                        <span class="px-3 py-1 bg-navy-100 text-navy-700 text-xs font-medium rounded-full">Otomasyon</span>
+                          <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full"
+                              data-i18n="cases.automation">
+                            Otomasyon
+                        </span>
                     </div>
                     <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case1_title">Üretim Süreçleri Optimizasyonu</h3>
                     <div class="space-y-3">
@@ -509,7 +644,10 @@
                 <!-- Case 3 -->
                 <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm card-hover fade-in-section">
                     <div class="flex items-center gap-2 mb-4">
-                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full">Otomasyon</span>
+                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full"
+                              data-i18n="cases.automation">
+                            Otomasyon
+                        </span>
                     </div>
                     <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case3_title">Operasyonel Süreç Otomasyonu</h3>
                     <div class="space-y-3">
@@ -528,7 +666,10 @@
                 <div class="bg-white border border-navy-200 p-8 rounded-xl shadow-sm card-hover fade-in-section">
                     <div class="flex items-center gap-2 mb-4">
                         <span class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-medium rounded-full">CRM</span>
-                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full">Otomasyon</span>
+                        <span class="px-3 py-1 bg-accent-orange/10 text-accent-orange text-xs font-medium rounded-full"
+                              data-i18n="cases.automation">
+                            Otomasyon
+                        </span>
                     </div>
                     <h3 class="text-xl font-semibold text-navy-900 mb-4" data-i18n="cases.case4_title">Müşteri Deneyimi ve Destek Süreçleri</h3>
                     <div class="space-y-3">
@@ -721,10 +862,13 @@
             <p class="text-gray-300 max-w-xl mx-auto mb-10" data-i18n="contact.subtitle">
                 Dijital dönüşüm sürecinizi birlikte planlayalım. Size en uygun çözümü konuşmak için bize ulaşın.
             </p>
+            <p class="text-gray-300 max-w-xl mx-auto mb-10" data-i18n="contact.email">
+                smartbasetr@gmail.com
+            </p>
 
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 
-                <!-- Email Button -->
+                <!-- Email Button -->        
                 <a href="mailto:smartbasetr@gmail.com" 
                 class="bg-teal-500 text-white px-8 py-4 rounded-lg hover:bg-teal-600 transition-all duration-300 font-medium shadow-lg shadow-teal-500/20" data-i18n="contact.email_btn">
                     E-posta ile ulaş
@@ -735,7 +879,6 @@
                 class="bg-transparent border-2 border-white/30 text-white px-8 py-4 rounded-lg hover:bg-white/10 hover:border-white/50 transition-all duration-300 font-medium" data-i18n="contact.linkedin_btn">
                     LinkedIn'den ulaş
                 </a>
-
             </div>
 
         </div>
@@ -751,7 +894,6 @@
                 <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
                     <a href="mailto:smartbasetr@gmail.com" class="text-gray-400 hover:text-teal-500 text-sm transition-colors">smartbasetr@gmail.com</a>
                     <div class="flex space-x-6">
-                        <a href="privacy.html" class="text-gray-400 hover:text-white text-sm transition-colors" data-i18n="footer.privacy">Gizlilik Politikası</a>
                         <a href="terms.html" class="text-gray-400 hover:text-white text-sm transition-colors" data-i18n="footer.terms">Kullanım Şartları</a>
                     </div>
                 </div>
