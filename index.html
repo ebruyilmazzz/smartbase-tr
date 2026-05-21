@@ -308,7 +308,6 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="#about" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.about">Hakkımızda</a>
                     <a href="#services" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.services">Hizmetler</a>
-                    <a href="#team" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.team">Ekip</a>
                     <a href="#process" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.process">Süreç</a>
                     <a href="#cases" class="text-gray-600 hover:text-teal-500 transition-colors" data-i18n="nav.cases">Başarı Hikayeleri</a>
                     <a href="#contact" class="bg-teal-500 text-white px-5 py-2.5 rounded-lg hover:bg-navy-950 transition-colors" data-i18n="nav.contact">İletişim</a>
@@ -326,7 +325,6 @@
             <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 space-y-4">
                 <a href="#about" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.about">Hakkımızda</a>
                 <a href="#services" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.services">Hizmetler</a>
-                <a href="#team" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.team">Ekip</a>
                 <a href="#process" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.process">Süreç</a>
                 <a href="#cases" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.cases">Başarı Hikayeleri</a>
                 <a href="#contact" class="block text-gray-600 hover:text-teal-500" data-i18n="nav.contact">İletişim</a>
@@ -697,8 +695,7 @@
         </div>
     </section>
 
-    <!-- Team Section -->
-    <section id="team" class="py-20 px-6 bg-white fade-in-section">
+    <!-- <section id="team" class="py-20 px-6 bg-white fade-in-section">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-semibold text-navy-900 mb-4" data-i18n="team.title">Ekibimiz</h2>
@@ -706,7 +703,7 @@
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Team Member 1 -->
+            
                 <div class="bg-white border border-navy-200 p-6 rounded-xl shadow-sm card-hover fade-in-section">
                     <div class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <span class="text-white text-2xl font-bold">BE</span>
@@ -720,7 +717,7 @@
                         </svg>
                     </a>
                 </div>
-                 <!-- Team Member 2 -->
+                
                 <div class="bg-white border border-navy-100 p-6 rounded-xl shadow-sm card-hover">                        
                          <div class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <span class="text-white text-2xl font-bold">SE</span>
@@ -737,7 +734,6 @@
                 </div>
 
 
-                <!-- Team Member 3 -->
                 <div class="bg-white border border-navy-100 p-6 rounded-xl shadow-sm card-hover">
                      <div class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <span class="text-white text-2xl font-bold">EY</span>
@@ -754,8 +750,7 @@
                     </a>
                 </div>
 
-                <!-- Team Member 4 -->
-                <div class="bg-white border border-navy-100 p-6 rounded-xl shadow-sm card-hover">
+                                <div class="bg-white border border-navy-100 p-6 rounded-xl shadow-sm card-hover">
                          <div class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <span class="text-white text-2xl font-bold">BS</span>
                     </div>
@@ -770,7 +765,7 @@
                     </a>
                 </div>
 
-                <!-- Team Member 5 -->
+           
                 <div class="bg-white border border-navy-100 p-6 rounded-xl shadow-sm card-hover">                     
                          <div class="w-20 h-20 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full mx-auto mb-4 flex items-center justify-center">
                         <span class="text-white text-2xl font-bold">ATC</span>
@@ -791,6 +786,8 @@
             </div>
         </div>
     </section>
+ -->
+    
 
     <!-- Why SmartBase Section -->
     <section class="py-20 px-6 bg-navy-50 fade-in-section">
@@ -993,48 +990,63 @@
         });
 
         // Dynamic Text Rotation - Horizontal Fade
-        const dynamicTextElement = document.getElementById('dynamic-text');
-        let dynamicIndex = 0;
-        const displayTime = 2500; // 2.5 seconds display
-        const fadeTime = 800; // 0.8 seconds fade
+    const dynamicTextElement = document.getElementById('dynamic-text');
+let dynamicIndex = 0;
+const displayTime = 2500;
+const fadeTime = 800;
+const initialDelay = 3000; // 1 saniye bekle
 
-        function getDynamicWords() {
-            const translations = window.i18n?.getTranslations();
-            const currentLang = window.i18n?.getCurrentLang();
-            return translations?.[currentLang]?.hero?.dynamic_words || ['ERP', 'CRM'];
-        }
+function getDynamicWords() {
+    const translations = window.i18n?.getTranslations();
+    const currentLang = window.i18n?.getCurrentLang();
+    return translations?.[currentLang]?.hero?.dynamic_words || ['ERP', 'CRM'];
+}
 
-        let dynamicWords = getDynamicWords();
+let dynamicWords = getDynamicWords();
 
-        function updateDynamicText() {
-            dynamicWords = getDynamicWords();
-            dynamicIndex = 0;
-            if (dynamicTextElement) {
-                dynamicTextElement.textContent = dynamicWords[0];
-            }
-        }
+function updateDynamicText() {
+    dynamicWords = getDynamicWords();
+    dynamicIndex = 0;
 
-        function rotateDynamicText() {
-            // Fade out
-            dynamicTextElement.classList.add('fade-out');
-            dynamicTextElement.classList.remove('fade-in');
+    if (dynamicTextElement) {
+        dynamicTextElement.textContent = dynamicWords[0];
+        dynamicTextElement.classList.add('fade-in');
+    }
+}
 
-            setTimeout(() => {
-                // Change text
-                dynamicIndex = (dynamicIndex + 1) % dynamicWords.length;
-                dynamicTextElement.textContent = dynamicWords[dynamicIndex];
+function rotateDynamicText() {
+    if (!dynamicTextElement) return;
 
-                // Fade in
-                dynamicTextElement.classList.remove('fade-out');
-                dynamicTextElement.classList.add('fade-in');
-            }, fadeTime);
-        }
+    dynamicTextElement.classList.add('fade-out');
+    dynamicTextElement.classList.remove('fade-in');
 
-        // Start rotation
-        setInterval(rotateDynamicText, displayTime + fadeTime);
+    setTimeout(() => {
+        dynamicIndex = (dynamicIndex + 1) % dynamicWords.length;
+        dynamicTextElement.textContent = dynamicWords[dynamicIndex];
 
-        // Listen for language changes
-        document.addEventListener('languageChanged', updateDynamicText);
+        dynamicTextElement.classList.remove('fade-out');
+        dynamicTextElement.classList.add('fade-in');
+    }, fadeTime);
+}
+
+// Sayfa tam yüklenince başlat
+window.addEventListener('load', () => {
+    if (dynamicTextElement) {
+        dynamicTextElement.style.opacity = '0';
+
+        setTimeout(() => {
+            updateDynamicText();
+            dynamicTextElement.style.opacity = '1';
+
+            setInterval(
+                rotateDynamicText,
+                displayTime + fadeTime
+            );
+        }, initialDelay);
+    }
+});
+
+document.addEventListener('languageChanged', updateDynamicText);
 
         // Section Fade-in Animation on Scroll
         const fadeSections = document.querySelectorAll('.fade-in-section');
